@@ -11,6 +11,7 @@ import java.util.Optional;
 @Repository
 public interface TruckCapacityRepository extends JpaRepository<TruckCapacity, Integer> {
 
+    Optional<TruckCapacity> findByTransporterTransporterIdAndTruckType(Integer transporterId, String truckType);
 
     @Modifying
     @Query("DELETE FROM TruckCapacity tc WHERE tc.transporter.transporterId = :transporterId")
