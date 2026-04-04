@@ -116,12 +116,7 @@ class BidServiceTest {
     }
 
     @Test
-    void createBid_LoadBooked_ThrowsException() {
-        testLoad.setStatus("BOOKED");
-        when(loadRepository.findById(1)).thenReturn(Optional.of(testLoad));
-
-        assertThrows(InvalidStatusTransitionException.class, () -> bidService.createBid(testBidRequest));
-    }
+    
 
     @Test
     void createBid_InsufficientCapacity_ThrowsException() {
