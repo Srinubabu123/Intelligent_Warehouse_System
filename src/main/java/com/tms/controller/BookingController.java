@@ -25,7 +25,14 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    
+    @PostMapping
+    @Operation(summary = "Create a booking (accept bid)", description = "Accepts a bid and creates a booking (deducts truck capacity, handles concurrency)")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Booking created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid booking request"),
+            @ApiResponse(responseCode = "404", description = "Bid not found"),
+            @ApiResponse(responseCode = "409", description = "Concurrent booking conflict")
+    })
     public ResponseEntity<BookingResponse> createBooking(@Valid @RequestBody BookingRequest request) {
         BookingResponse response = bookingService.createBooking(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
