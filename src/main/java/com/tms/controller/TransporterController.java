@@ -54,12 +54,7 @@ public class TransporterController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/{transporterId}/trucks")
-    @Operation(summary = "Update truck capacity", description = "Updates available trucks for a transporter")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Truck capacity updated"),
-            @ApiResponse(responseCode = "404", description = "Transporter not found")
-    })
+    
     public ResponseEntity<TransporterResponse> updateTruckCapacity(
             @PathVariable Integer transporterId,
             @Valid @RequestBody List<TransporterRequest.TruckCapacityDTO> trucks) {
