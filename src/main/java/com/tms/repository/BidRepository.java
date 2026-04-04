@@ -15,6 +15,8 @@ public interface BidRepository extends JpaRepository<Bid, Integer> {
 
     List<Bid> findByTransporterId(Integer transporterId);
 
+    List<Bid> findByStatus(String status);
+
     List<Bid> findByLoadIdAndStatus(Integer loadId, String status);
 
     List<Bid> findByTransporterIdAndStatus(Integer transporterId, String status);
