@@ -51,12 +51,7 @@ public class LoadController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{loadId}")
-    @Operation(summary = "Get load by ID", description = "Returns load details with active bids")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Load found"),
-            @ApiResponse(responseCode = "404", description = "Load not found")
-    })
+    
     public ResponseEntity<LoadResponse> getLoadById(@PathVariable Integer loadId) {
         LoadResponse response = loadService.getLoadById(loadId);
         return ResponseEntity.ok(response);
