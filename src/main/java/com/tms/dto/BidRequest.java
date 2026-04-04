@@ -14,7 +14,9 @@ public class BidRequest {
     @Positive(message = "Proposed rate must be positive")
     private Double proposedRate;
 
-    
+    @NotNull(message = "Trucks offered is required")
+    @Min(value = 1, message = "At least 1 truck must be offered")
+    private Integer trucksOffered;
 
     public Integer getLoadId() { return loadId; }
     public void setLoadId(Integer loadId) { this.loadId = loadId; }
