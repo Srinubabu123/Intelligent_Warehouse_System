@@ -13,15 +13,6 @@ CREATE TABLE transporters (
     version INTEGER DEFAULT 0
 );
 
-CREATE TABLE truck_capacity (
-    id SERIAL PRIMARY KEY,
-    transporter_id INTEGER NOT NULL,
-    truck_type VARCHAR(50) NOT NULL,
-    count INTEGER NOT NULL CHECK (count >= 0),
-    version INTEGER DEFAULT 0,
-    FOREIGN KEY (transporter_id) REFERENCES transporters(transporter_id) ON DELETE CASCADE,
-    UNIQUE(transporter_id, truck_type)
-);
 
 CREATE TABLE loads (
     load_id SERIAL PRIMARY KEY,
