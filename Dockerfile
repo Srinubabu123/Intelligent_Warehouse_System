@@ -17,7 +17,7 @@ RUN addgroup -S wallet && adduser -S wallet -G wallet
 RUN mkdir -p logs && chown wallet:wallet logs
 USER wallet
 
-COPY --from=builder /app/target/wallet_db-1.0.0.jar app.jar
+COPY --from=builder /app/target/transport-management-system-1.0.0.jar app.jar
 
 ENV JAVA_OPTS="-Xms256m -Xmx512m -XX:+UseG1GC -XX:MaxGCPauseMillis=200"
 
