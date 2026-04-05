@@ -44,10 +44,7 @@ CREATE INDEX idx_loads_status ON loads(status);
 CREATE INDEX idx_loads_loading_date ON loads(loading_date);
 
 CREATE TABLE bids (
-    bid_id SERIAL PRIMARY KEY,
-    load_id INTEGER NOT NULL,
-    transporter_id INTEGER NOT NULL,
-    proposed_rate DECIMAL(10,2) NOT NULL,
+    
     trucks_offered INTEGER NOT NULL CHECK (trucks_offered > 0),
     status VARCHAR(20) NOT NULL DEFAULT 'PENDING' CHECK (status IN ('PENDING', 'ACCEPTED', 'REJECTED')),
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
