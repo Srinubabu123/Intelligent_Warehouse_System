@@ -20,6 +20,7 @@ com\tms\dto\BookingResponse.class
 com\tms\config\OpenApiConfig.class
 com\tms\exception\GlobalExceptionHandler.class
 com\tms\TransportManagementSystemApplication.class
+com\tms\controller\BidUIController.class
 com\tms\entity\Transporter.class
 com\tms\dto\TransporterRequest.class
 com\tms\repository\BidRepository.class

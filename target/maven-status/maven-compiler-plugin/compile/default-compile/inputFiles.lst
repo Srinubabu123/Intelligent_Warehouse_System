@@ -2,6 +2,7 @@ D:\Archive (1)\src\main\java\com\tms\config\OpenApiConfig.java
 D:\Archive (1)\src\main\java\com\tms\controller\TransporterController.java
 D:\Archive (1)\src\main\java\com\tms\repository\TruckCapacityRepository.java
 D:\Archive (1)\src\main\java\com\tms\dto\BidResponse.java
+D:\Archive (1)\src\main\java\com\tms\controller\BidUIController.java
 D:\Archive (1)\src\main\java\com\tms\dto\BookingResponse.java
 D:\Archive (1)\src\main\java\com\tms\controller\BidController.java
 D:\Archive (1)\src\main\java\com\tms\service\LoadService.java
