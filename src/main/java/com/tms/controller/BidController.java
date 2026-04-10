@@ -59,13 +59,7 @@ public class BidController {
         return ResponseEntity.ok(response);
     }
 
-    @PatchMapping("/{bidId}/reject")
-    @Operation(summary = "Reject a bid", description = "Rejects a pending bid")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Bid rejected successfully"),
-            @ApiResponse(responseCode = "400", description = "Cannot reject bid with current status"),
-            @ApiResponse(responseCode = "404", description = "Bid not found")
-    })
+    @PostMapping("/{bidId}/reject")
     public ResponseEntity<BidResponse> rejectBid(@PathVariable Integer bidId) {
         BidResponse response = bidService.rejectBid(bidId);
         return ResponseEntity.ok(response);
